@@ -20,6 +20,7 @@ jobs:
         debug: true
         script: |
           cd /var/www/specialtrainingfitness.it
+          mkdir -p html
           git clone --depth 1 https://github.com/${{ github.repository }}.git temp || true
           cd temp
           cp -r html/* ../html/
