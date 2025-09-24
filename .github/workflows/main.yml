@@ -17,6 +17,7 @@ jobs:
         host: ${{ secrets.VM_HOST }}
         username: deploy
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        debug: true
         script: |
           cd /var/www/specialtrainingfitness.it
           git clone --depth 1 https://github.com/${{ github.repository }}.git temp || true
