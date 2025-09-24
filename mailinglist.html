@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailing List - Special Forces Training</title>
+    <meta name="description" content="Iscriviti alla nostra mailing list e ricevi gratuitamente una guida PDF con esercizi e consigli per la preparazione fisica delle forze speciali.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="logo.png" alt="Special Forces Training" class="logo">
+                    <span class="logo-text">Special Forces Training</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#preparazione" class="nav-link">Preparazione d'Elite</a></li>
+                    <li><a href="index.html#programmi" class="nav-link">Programmi</a></li>
+                    <li><a href="index.html#app" class="nav-link">App</a></li>
+                    <li><a href="index.html#come-funziona" class="nav-link">Come Funziona</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="index.html#contatti" class="nav-link">Contatti</a></li>
+                    <li><a href="mailinglist.html" class="nav-link nav-link-special">Mailing List</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-small">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Ricevi la tua <span class="highlight">Guida Gratuita</span></h1>
+                <p class="hero-subtitle">Iscriviti alla nostra mailing list e ottieni subito un PDF gratuito con esercizi e consigli per iniziare il tuo percorso di preparazione fisica</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mailing List Section -->
+    <section class="section mailing-list">
+        <div class="container">
+            <div class="mailing-content">
+                <div class="mailing-form">
+                    <div class="form-header">
+                        <h2>Iscriviti alla Mailing List</h2>
+                        <p>Compila il form qui sotto per ricevere la tua guida gratuita e rimanere aggiornato sui nostri contenuti esclusivi.</p>
+                    </div>
+                    
+                    <form id="mailingForm" class="newsletter-form">
+                        <div class="form-group">
+                            <label for="nome">Nome *</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cognome">Cognome *</label>
+                            <input type="text" id="cognome" name="cognome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Indirizzo Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interesse">Principale interesse (opzionale)</label>
+                            <select id="interesse" name="interesse">
+                                <option value="">Seleziona un'opzione</option>
+                                <option value="forze-speciali">Preparazione per forze speciali</option>
+                                <option value="crossfit">Allenamento CrossFit</option>
+                                <option value="fitness-generale">Fitness generale</option>
+                                <option value="motivazione">Motivazione e mindset</option>
+                                <option value="nutrizione">Nutrizione sportiva</option>
+                            </select>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">Acconsento al trattamento dei miei dati per l'invio della newsletter e del materiale gratuito *</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="marketing" name="marketing">
+                            <label for="marketing">Acconsento a ricevere comunicazioni commerciali e promozionali</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-download"></i>
+                            Iscriviti e Scarica la Guida
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="pdf-preview">
+                    <div class="pdf-card">
+                        <div class="pdf-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Guida Gratuita: "Primi Passi verso l'Eccellenza"</h3>
+                        <div class="pdf-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Esercizi di base per la preparazione fisica</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Consigli per iniziare l'allenamento</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Tecniche di motivazione e mindset</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Piano di allenamento settimanale</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Suggerimenti nutrizionali di base</span>
+                            </div>
+                        </div>
+                        <div class="pdf-stats">
+                            <div class="stat">
+                                <span class="stat-number">25</span>
+                                <span class="stat-label">Pagine</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Esercizi</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Gratuito</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cosa riceverai iscrivendoti</h2>
+                <p class="section-description">Oltre alla guida gratuita, avrai accesso a contenuti esclusivi e aggiornamenti regolari</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Newsletter Settimanale</h3>
+                    <p>Ricevi ogni settimana consigli, esercizi e motivazione direttamente nella tua casella email.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Contenuti Esclusivi</h3>
+                    <p>Accesso anticipato a nuovi programmi, video tutorial e materiali di approfondimento.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Offerte Speciali</h3>
+                    <p>Sconti esclusivi sull'app e sui futuri prodotti riservati solo agli iscritti alla mailing list.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Comunità Privata</h3>
+                    <p>Inviti a eventi esclusivi e accesso alla nostra comunità privata di atleti motivati.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Special Forces Training" class="logo">
+                        <span class="logo-text">Special Forces Training</span>
+                    </div>
+                    <p>Allenamento ispirato alle forze speciali per atleti che vogliono il meglio.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#preparazione">Preparazione d'Elite</a></li>
+                        <li><a href="index.html#programmi">Programmi</a></li>
+                        <li><a href="index.html#app">App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Supporto</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contatti">Contatti</a></li>
+                        <li><a href="mailinglist.html">Mailing List</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Special Forces Training. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Mailing list form handling
+        document.getElementById('mailingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Validation
+            if (!data.nome || !data.cognome || !data.email) {
+                alert('Per favore, compila tutti i campi obbligatori.');
+                return;
+            }
+            
+            if (!data.privacy) {
+                alert('Devi accettare il trattamento dei dati per procedere.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Per favore, inserisci un indirizzo email valido.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Iscrizione in corso...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Iscrizione completata con successo! Controlla la tua email per scaricare la guida gratuita.');
+                this.reset();
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    </script>
+
+    <style>
+        .hero-small {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, #2d5016, #4a7c59);
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-small .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-small .hero-subtitle {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .mailing-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .form-header {
+            margin-bottom: 2rem;
+        }
+        
+        .form-header h2 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .newsletter-form select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+        }
+        
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .pdf-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .pdf-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc3545, #e74c3c);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .pdf-card h3 {
+            color: #2d5016;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pdf-features {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-item i {
+            color: #28a745;
+            font-size: 0.9rem;
+        }
+        
+        .pdf-stats {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #e1e5e9;
+            padding-top: 1.5rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2d5016, #4a7c59);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .benefit-card h3 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .mailing-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-small .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .newsletter-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</body>
+</html>
+
