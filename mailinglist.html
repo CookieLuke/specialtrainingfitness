@@ -58,6 +58,11 @@
                     </div>
                     
                     <form id="mailingForm" class="newsletter-form">
+                        <!-- Honeypot field - hidden from users -->
+                        <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;">
+                            <label for="website">Website (do not fill):</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="form-group">
                             <label for="nome">Nome *</label>
                             <input type="text" id="nome" name="nome" required>
@@ -232,42 +237,49 @@
     <script src="script.js"></script>
     <script>
         // Mailing list form handling
-        document.getElementById('mailingForm').addEventListener('submit', function(e) {
+        document.getElementById('mailingForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            const payload = Object.fromEntries(formData);
             
             // Validation
-            if (!data.nome || !data.cognome || !data.email) {
+            if (!payload.nome || !payload.cognome || !payload.email) {
                 alert('Per favore, compila tutti i campi obbligatori.');
                 return;
             }
-            
-            if (!data.privacy) {
+            if (!payload.privacy) {
                 alert('Devi accettare il trattamento dei dati per procedere.');
                 return;
             }
-            
-            // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
+            if (!emailRegex.test(payload.email)) {
                 alert('Per favore, inserisci un indirizzo email valido.');
                 return;
             }
             
-            // Simulate form submission
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalHTML = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Iscrizione in corso...';
             submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                alert('Iscrizione completata con successo! Controlla la tua email per scaricare la guida gratuita.');
+            try {
+                const res = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json().catch(() => ({}));
+                if (!res.ok || !data.success) {
+                    throw new Error(data.error || 'Errore iscrizione');
+                }
+                alert('Iscrizione completata! Controlla la tua email.');
                 this.reset();
+            } catch (err) {
+                alert('Impossibile completare l\'iscrizione ora. Riprova.');
+            } finally {
                 submitBtn.innerHTML = originalHTML;
                 submitBtn.disabled = false;
-            }, 2000);
+            }
         });
     </script>
 

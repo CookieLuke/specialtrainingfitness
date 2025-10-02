@@ -50,43 +50,50 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form data
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
+            const payload = Object.fromEntries(formData);
+
             // Basic validation
-            if (!data.nome || !data.email || !data.telefono) {
+            if (!payload.nome || !payload.email || !payload.telefono) {
                 alert('Per favore, compila tutti i campi obbligatori.');
                 return;
             }
-            
-            if (!data.privacy) {
+            if (!payload.privacy) {
                 alert('Devi accettare il trattamento dei dati per procedere.');
                 return;
             }
-            
-            // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
+            if (!emailRegex.test(payload.email)) {
                 alert('Per favore, inserisci un indirizzo email valido.');
                 return;
             }
-            
-            // Simulate form submission
+
             const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Invio in corso...';
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Invio...';
             submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                alert('Messaggio inviato con successo! Ti risponderemo al più presto.');
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json().catch(() => ({}));
+                if (!res.ok || !data.success) {
+                    throw new Error(data.error || 'Errore invio');
+                }
+                alert('Messaggio inviato con successo! Ti risponderemo a breve.');
                 this.reset();
-                submitBtn.textContent = originalText;
+            } catch (err) {
+                alert('Impossibile inviare il messaggio. Riprova tra poco.');
+            } finally {
+                submitBtn.innerHTML = originalHTML;
                 submitBtn.disabled = false;
-            }, 2000);
+            }
         });
     }
     
