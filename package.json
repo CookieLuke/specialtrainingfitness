@@ -1,0 +1,24 @@
+{
+  "name": "special-forces-training-website",
+  "version": "1.0.0",
+  "description": "Sito web moderno e professionale per l'app Special Forces Training, progettato per la preparazione ai test delle forze speciali italiane.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CookieLuke/specialtrainingfitness.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CookieLuke/specialtrainingfitness/issues"
+  },
+  "homepage": "https://github.com/CookieLuke/specialtrainingfitness#readme",
+  "dependencies": {
+    "axios": "^1.12.2"
+  }
+}
