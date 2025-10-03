@@ -263,7 +263,7 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Iscrizione in corso...';
             submitBtn.disabled = true;
             try {
-                const res = await fetch('/api/subscribe', {
+                const res = await fetch('/.netlify/functions/sendmail', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
