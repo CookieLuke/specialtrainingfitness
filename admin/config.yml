@@ -1,0 +1,99 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "/"
+public_folder: "/"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.html"
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - {label: "Hero Title", name: "hero_title", widget: "string", default: "Preparati come un professionista"}
+          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text", default: "Allenamento ispirato alle forze speciali per atleti che vogliono il meglio"}
+          - {label: "Hero Image", name: "hero_image", widget: "image", default: "hero-image.jpg"}
+          
+          - label: "Preparazione Section"
+            name: "preparazione"
+            widget: "object"
+            fields:
+              - {label: "Section Title", name: "title", widget: "string", default: "Supera i test delle forze speciali"}
+              - {label: "Section Description", name: "description", widget: "text"}
+              - {label: "Content Title", name: "content_title", widget: "string", default: "Il tuo percorso verso l'eccellenza"}
+              - {label: "Content Paragraph 1", name: "content_p1", widget: "text"}
+              - {label: "Content Paragraph 2", name: "content_p2", widget: "text"}
+              - {label: "Feature Image", name: "image", widget: "image", default: "military-training.jpg"}
+          
+          - label: "App Section"
+            name: "app_section"
+            widget: "object" 
+            fields:
+              - {label: "Section Title", name: "title", widget: "string", default: "Allenati come un vero professionista"}
+              - {label: "App URL", name: "app_url", widget: "string", default: "https://specialforcesapp.vercel.app/"}
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                fields:
+                  - {label: "Icon", name: "icon", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+          
+          - label: "Contact Information"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Email", name: "email", widget: "string", default: "info@specialtrainingfitness.it"}
+              - {label: "Phone", name: "phone", widget: "string", default: "+39 XXX XXX XXXX"}
+              - {label: "Working Hours", name: "hours", widget: "string", default: "Lun-Ven: 9:00-18:00"}
+              - label: "Social Links"
+                name: "social"
+                widget: "object"
+                fields:
+                  - {label: "Facebook URL", name: "facebook", widget: "string", required: false}
+                  - {label: "Instagram URL", name: "instagram", widget: "string", required: false}
+                  - {label: "YouTube URL", name: "youtube", widget: "string", required: false}
+                  - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog-posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "site-settings.yml"
+        label: "General Settings"
+        name: "general"
+        fields:
+          - {label: "Site Title", name: "site_title", widget: "string", default: "Special Forces Training"}
+          - {label: "Site Description", name: "site_description", widget: "text"}
+          - {label: "Logo", name: "logo", widget: "image", default: "logo.png"}
+          - {label: "Favicon", name: "favicon", widget: "image", required: false}
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Meta Keywords", name: "keywords", widget: "string"}
+              - {label: "Google Analytics ID", name: "google_analytics", widget: "string", required: false}
+              - {label: "Google Search Console", name: "google_console", widget: "string", required: false}
+          - label: "Email Settings"
+            name: "email"
+            widget: "object"
+            fields:
+              - {label: "Contact Email", name: "contact_email", widget: "string", default: "info@specialtrainingfitness.it"}
+              - {label: "App Email", name: "app_email", widget: "string", default: "app@specialtrainingfitness.it"}
+              - {label: "Support Email", name: "support_email", widget: "string", default: "support@specialtrainingfitness.it"}
+              - {label: "PDF Guide URL", name: "pdf_url", widget: "string", default: "https://www.specialtrainingfitness.it/assets/guida.pdf"}
