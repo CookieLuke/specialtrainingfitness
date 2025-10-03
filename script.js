@@ -77,9 +77,11 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = true;
 
             try {
-                const res = await fetch('/api/contact', {
+                const res = await fetch('/.netlify/functions/emails/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
+                    'X-Emails-Bypass-Secret': 'true'   // <-- bypass momentaneo
+  },
                     body: JSON.stringify(payload)
                 });
                 const data = await res.json().catch(() => ({}));
