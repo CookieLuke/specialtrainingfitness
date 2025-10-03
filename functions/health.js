@@ -1,0 +1,15 @@
+exports.handler = async (event, context) => {
+  return {
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify({
+      ok: true,
+      ts: new Date().toISOString(),
+      service: 'SFT Netlify Functions',
+      version: '1.0.0'
+    })
+  };
+};

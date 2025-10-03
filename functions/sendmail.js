@@ -22,13 +22,13 @@ exports.handler = async (event, context) => {
 
       const form = querystring.stringify({
         from: `${nome} <postmaster@mg.specialtrainingfitness.it>`,
-        to: "info@specialtrainingfitness.it",
+        to: "app@specialtrainingfitness.it",
         subject: `Nuovo contatto dal sito - ${nome}`,
         text: `Nome: ${nome}\nEmail: ${email}\nTelefono: ${telefono || '-'}\n\nMessaggio:\n${messaggio || 'Nessun messaggio'}`
       });
 
       await axios.post(
-        "https://api.eu.mailgun.net/v3/mg.specialtrainingfitness.it/messages",
+        "https://api.mailgun.net/v3/mg.specialtrainingfitness.it/messages",
         form,
         {
           auth: { username: "api", password: process.env.MAILGUN_KEY },
@@ -67,7 +67,7 @@ exports.handler = async (event, context) => {
       });
 
       await axios.post(
-        "https://api.eu.mailgun.net/v3/mg.specialtrainingfitness.it/messages",
+        "https://api.mailgun.net/v3/mg.specialtrainingfitness.it/messages",
         welcomeForm,
         {
           auth: { username: "api", password: process.env.MAILGUN_KEY },
